@@ -1,0 +1,39 @@
+.page {
+  scroll-behavior: smooth;
+
+  &__body {
+    padding: 0;
+    margin: 0;
+  }
+
+  html:target {
+    scroll-behavior: auto;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+    transition:
+      transform 0.5s ease,
+      opacity 0.5s ease;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0%);
+      pointer-events: all;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}
